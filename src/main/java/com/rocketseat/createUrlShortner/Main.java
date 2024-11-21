@@ -38,7 +38,7 @@ public class Main implements RequestHandler<Map<String, Object>, Map<String, Str
         try{
             String urlDataJson = objectMapper.writeValueAsString(urlData);
             PutObjectRequest request = PutObjectRequest.builder()
-                    .bucket("shorteneturl-store ")
+                    .bucket("shortener-url-store")
                     .key(shortUrlCode + ".json")
                     .build();
             s3Client.putObject(request, RequestBody.fromString(urlDataJson));
